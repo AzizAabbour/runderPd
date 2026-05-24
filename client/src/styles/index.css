@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply min-h-screen antialiased;
+    background:
+      radial-gradient(circle at top, rgba(56, 189, 248, 0.08), transparent 28%),
+      radial-gradient(circle at right, rgba(139, 92, 246, 0.08), transparent 30%),
+      #07111f;
+    color: #e2e8f0;
+  }
+
+  html:not(.dark) body {
+    background:
+      radial-gradient(circle at top, rgba(14, 165, 233, 0.12), transparent 24%),
+      radial-gradient(circle at right, rgba(99, 102, 241, 0.08), transparent 28%),
+      #f5f7fb;
+    color: #0f172a;
+  }
+
+  ::selection {
+    background: rgba(56, 189, 248, 0.3);
+    color: #ffffff;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply border border-white/10 bg-white/5 shadow-glass backdrop-blur-2xl;
+  }
+
+  .glass-panel-light {
+    @apply border border-slate-200/80 bg-white/80 shadow-glass backdrop-blur-2xl;
+  }
+
+  .premium-grid {
+    background-image:
+      linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-300 via-cyan-300 to-accent-400 bg-clip-text text-transparent;
+  }
+}
+
